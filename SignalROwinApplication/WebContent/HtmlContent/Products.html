@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Products page</title>
+    <script src="../../Scripts/jquery-2.1.0.js"></script>
+    <script src="../../Scripts/jquery.signalR-2.0.3.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/application/application.js"></script>
+    <script src="../../scripts/application/controllers/controller.js"></script>
+    <script src="../../scripts/application/services/productsservice.js"></script>
+    <script src="../../scripts/application/services/chatHub.js"></script>
+
+    <script src="../../Scripts/angular-signalr-hub.js"></script>
+
+</head>
+    <body data-ng-app="application" data-ng-controller="controller">
+        <h3>Web Api data</h3>
+        <p data-ng-repeat="p in products">{{p.Id}}&nbsp;{{p.Name}}&nbsp;{{p.Description}}</p>
+        <br/>
+        <h3>Web Socket data</h3>
+        <input type="text" data-ng-model="message" />
+        <br/>
+        <button data-ng-click="send()">send</button>
+        <br/>
+        <p data-ng-repeat="m in messages">{{m}}</p>
+    </body>
+</html>
